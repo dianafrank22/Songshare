@@ -1,0 +1,39 @@
+this is where users sign up
+
+sign up form for someone to be a new user
+
+create form 
+
+create path in users_controller
+
+redirect to recs page/set them as current_user once they've signed up
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+<form method='POST' action='/signup' class="signupForm">
+	<label>EMAIL</label>
+	<input type = 'text' name = 'email'> <br>
+	<label>USERNAME</label>
+	<input type = 'text' name = 'username'> <br>
+	<label> Image </label>
+	<input type = 'text' name = 'image'> <br>
+
+	<label>PASSWORD</label>
+	<input type = 'password' name= 'password'><br><br>
+	<input type = 'hidden' name = 'authenticity_token' value='<%= form_authenticity_token()%>' size = '65'>
+	<button type = 'submit' class="push"> Sign Up </button>
+</form>
+
+
+
+	
+</body>
+</html>
