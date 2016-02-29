@@ -3,9 +3,9 @@ class UsersController < ApplicationController
 
 	def index 
 		if session[:current_user]
-			redirect_to "recs index page"
+			redirect_to "/recs"
 		end
-		render :index
+		
 	end
 
 	def login
