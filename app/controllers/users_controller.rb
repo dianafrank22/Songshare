@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 			if user && user.authenticate(params['password'])
 				@current_user = user 
 				session[:current_user] = user 
+				redirect_to '/recs'
 			else 
 				@error = "Incorrect email or password. Please try again."
 			end

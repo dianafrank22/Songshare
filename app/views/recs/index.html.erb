@@ -1,13 +1,15 @@
-this is where a user sees all the recs from users they are following
-
-first get it to show all recs, and then can tweak it
+<a href = '/recs/new'> Add New Rec </a>
 
 <% @recs.each do |r| %>
 <div class = "rec">
-
+<%= @user %>
+<!-- find username for each user where id = user_id -->
 <h3> <%= r.title %> </h3>
 <h3> <%= r.artist %> </h3>
 <iframe src="https://embed.spotify.com/?uri=<%=r.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+<%= @tags %>
+
+
 
 </div>
 
