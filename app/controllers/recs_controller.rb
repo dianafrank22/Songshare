@@ -2,6 +2,7 @@ require 'pry'
 class RecsController < ApplicationController
 
 	def index
+		# @TODO show recs of only users you follow using join table
 		@recs = Rec.all
 		id = Rec.select('id')
 		# @TODO need to change this select('id') to be more specific? the id for each
@@ -22,9 +23,21 @@ class RecsController < ApplicationController
 
 
 	def create
-		@rec = Rec.new(params[:rec], :user_id => session["current_user"])
-    	render :show
+		# binding.pry
+		@rec = Rec.new(:title => params[:title], :preview_url => params[:preview_url],
+			:song_id => params[:song_id], :uri => params[:uri], :image => params[:image],
+			:artist => params[:artist], :spotify_url => params[:spotify_url], :user_id => session["current_user"])
+    	# render :show
+		
+    	if @rec.save
+	    	# render :show  	  	
+    	else
+    		render :index
+    	end
     end
+
+
+
 
  private 
 

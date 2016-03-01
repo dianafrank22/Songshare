@@ -1,30 +1,35 @@
 require 'pry'
 class UsersController < ApplicationController
-	# before_action :set_user
+	before_action :set_user
 
 	def index 
-		if session[:current_user]
+		if (session[:current_user] == true)
+			puts("logged in already")
+			@current_user = User.find(session['current_user']['id'])
 			redirect_to "/recs"
-			binding.pry
 		else 
+			binding.pry
 			render :index
-		end
-		
+
+		end	
 	end
 
 	def login
 		user = User.find_by(email: params['email'])
 			if user && user.authenticate(params['password'])
 				@current_user = user 
-				session[:current_user] = user.id 
+				session[:current_user] = user
 				redirect_to '/recs'
 			else 
 				@error = "Incorrect email or password. Please try again."
+				render :index
 			end
 		end
 
 	def logout 
-		session.clear
+		session[:current_user] == false
+		@current_user = session[:current_user]
+		puts ("logged out")
 		redirect_to "/" 
 	end
 
@@ -33,7 +38,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.new(params[:user])
+		@user = User.create(params[:user])
 		if @user.save
 			binding.pry
 			render :show
@@ -52,9 +57,9 @@ class UsersController < ApplicationController
 
 private
 # # Use callbacks to share common setup or constraints between actions.
-# def set_user
-#   @user = User.where(email: params['email'])
-# end
+def set_user
+  @user = User.where(email: params['email'])
+end
 
 # Never trust parameters from the scary internet, only allow the white list through.
 def user_params

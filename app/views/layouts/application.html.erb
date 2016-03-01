@@ -11,6 +11,13 @@
 	<a href = "/" class ="logo">
 		<!-- insert an image here -->
 	</a>
+
+		<% if session['current_user'] != nil %>
+		<!-- get the user name from the current_user in the session -->
+		<form action="/logout" method="POST" class="logoutForm">
+			<input  type="submit" value="Log Out">
+		</form>
+	<% end %>
 	</div>
 	
 

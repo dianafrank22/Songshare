@@ -1,4 +1,5 @@
 class Rec < ActiveRecord::Base
-	has_many :tags, through: :current_favs
+	has_many :rec_tags
+	has_many :tags, through: :rec_tags
 	belongs_to :users
 end

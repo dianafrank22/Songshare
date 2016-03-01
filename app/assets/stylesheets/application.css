@@ -14,3 +14,7 @@
  *= require_self
  *= require bootstrap.min
  */
+
+ input {
+ 	background: gray;
+ }

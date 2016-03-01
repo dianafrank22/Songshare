@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users
   resources :recs
-  
+  resources :tags
 
   get '/', to: 'users#home'
   get '/login', to: 'users#index'

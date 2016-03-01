@@ -54,6 +54,7 @@
 
 	$('#results').on("click", '.choose-song-btn', function(){
 		var song = JSON.parse(decodeURIComponent($(this).data('song')));
+		console.log("posted!")
 
 		$.ajax({
 			type: 'POST',
@@ -67,7 +68,8 @@
 				artist: song.artist, 
 				spotify_url: song.spotify_url
 			},
-			success: function(data){
+			// contentType: "application/json; charset=utf-8",
+   			success: function (data) {
 				console.log(data.song)
 			}
 		})
