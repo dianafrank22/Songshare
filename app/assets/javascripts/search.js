@@ -29,28 +29,7 @@
 		})
 	});
 
-	// $('#results').on("click", '.choose-song-btn', function(){
- //        var song = JSON.parse(decodeURIComponent($(this).data('song')));
- //        debugger
 
-	// 	var saveData = $.ajax(function(){
-	// 		type: 'POST',
-	// 		url: '/recs',
-	// 		data: {
-	// 			title: song.title,
-	// 			preview_url: song.preview_url,
-	// 			song_id: track.song_id, 
-	// 			uri: song.uri, 
-	// 			image: song.image, 
-	// 			artist: song.artist, 
-	// 			spotify_url: song.spotify_url
-	// 		},
-	// 		success: function(data) {
-	// 			debugger
-	// 		}
- // 		})
-      
-	// });
 
 	$('#results').on("click", '.choose-song-btn', function(){
 		var song = JSON.parse(decodeURIComponent($(this).data('song')));

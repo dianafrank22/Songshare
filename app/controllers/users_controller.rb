@@ -37,15 +37,28 @@ class UsersController < ApplicationController
 		@user = User.new	
 	end
 
+
+
 	def create
-		@user = User.create(params[:user])
-		if @user.save
-			binding.pry
-			render :show
-		else
-			render :new
-		end
-		# need to fix so that it updates properly
+		binding.pry
+		@top_5 = params[:top_5].split(",")
+
+		@user = User.create(
+			:email => params[:email],
+			:username => params[:username],
+			:image => params[:image],
+			:password => params[:password],
+			:top_5 => @top_5
+		  )
+		binding.pry
+	
+		# respond_to do |format|
+  #   	format.html
+  #   	format.json  { render :json => @user}
+  #   	binding.pry
+    		# @user.save
+  		# end
+  		# redirect_to '/recs'
 	end
 
 
