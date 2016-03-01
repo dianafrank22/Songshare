@@ -1,9 +1,13 @@
+require 'pry'
 class UsersController < ApplicationController
 	# before_action :set_user
 
 	def index 
 		if session[:current_user]
 			redirect_to "/recs"
+			binding.pry
+		else 
+			render :index
 		end
 		
 	end
@@ -12,7 +16,7 @@ class UsersController < ApplicationController
 		user = User.find_by(email: params['email'])
 			if user && user.authenticate(params['password'])
 				@current_user = user 
-				session[:current_user] = user 
+				session[:current_user] = user.id 
 				redirect_to '/recs'
 			else 
 				@error = "Incorrect email or password. Please try again."
@@ -31,6 +35,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(params[:user])
 		if @user.save
+			binding.pry
 			render :show
 		else
 			render :new

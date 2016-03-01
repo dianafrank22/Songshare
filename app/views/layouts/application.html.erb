@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Spotsocial</title>
+  <title>SongShare</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class = 'header clearfix'>
+	<a href = "/" class ="logo">
+		<!-- insert an image here -->
+	</a>
+	</div>
+	
+
+
 
 <%= yield %>
 
+<footer class = "footer">
+<p>&copy;Diana Frank Dev 2016.</p>
+</footer>
+
 </body>
 </html>
+
+
