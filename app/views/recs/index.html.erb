@@ -12,7 +12,6 @@
 
   </head>
 <body>
-    
 
 
 
@@ -25,9 +24,10 @@
 			<p> <%#= user.username %> Recommends: </p>
 		<%#end%>
 			<!-- find username for each user where id = user_id -->
-		<h3> <%= r.title %> </h3>
-		<h3> <%= r.artist %> </h3>
-		<iframe src="https://embed.spotify.com/?uri=<%=r.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+		<%binding.pry%>
+		<h3> <%= r[0].title %> </h3>
+		<h3> <%= r[0].artist %> </h3>
+		<iframe src="https://embed.spotify.com/?uri=<%=r[0].uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
 			<%end%>
 		
 		<%# @tag.each do |tag| %>
