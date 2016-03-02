@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Newest Recommendations</title>
+    <title>New Recommendations</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,22 +21,23 @@
 	<% @recs.each do |r| %>
 		<div class = "rec">
 			
-		<% @user.each do |user| %>
-			<p> <%= user.username %> Recommends: </p>
-		<%end%>
+		<%# @user.each do |user| %>
+			<p> <%#= user.username %> Recommends: </p>
+		<%#end%>
 			<!-- find username for each user where id = user_id -->
 		<h3> <%= r.title %> </h3>
 		<h3> <%= r.artist %> </h3>
 		<iframe src="https://embed.spotify.com/?uri=<%=r.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+			<%end%>
 		
-		<% @tag.each do |tag| %>
-			<li><%= tag.tag %></li>
-		<%end%>
+		<%# @tag.each do |tag| %>
+			<li><%#= tag.tag %></li>
+		<%#end%>
 
 		</div>
 
 
-	<%end%>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

@@ -2,8 +2,8 @@
 
 (function(){
 
-	$('.rec_button').click(function(){
-		console.log("New Rec Button Clicked!")
+	$('.favs_button').click(function(){
+		console.log("Current Favs Button Clicked!")
 		event.preventDefault();
 
 		// var searchResults = [];
@@ -37,7 +37,7 @@
 
 		$.ajax({
 			type: 'POST',
-			url: '/recs',
+			url: '/current_favs',
 			data: {
 				title: song.title,
 				preview_url: song.preview_url,

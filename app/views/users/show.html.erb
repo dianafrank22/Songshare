@@ -23,6 +23,12 @@ if own users page, has the edit option show up
 
 <% end %>
 
+<% @current_favs.each do |fav| %>
+	<h3> <%= fav.title %> </h3>
+		<h3> <%= fav.artist %> </h3>
+		<iframe src="https://embed.spotify.com/?uri=<%=fav.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+		<%end%>
+
 
 
 

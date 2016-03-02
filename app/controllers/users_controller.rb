@@ -3,35 +3,18 @@ class UsersController < ApplicationController
 	before_action :set_user
 
 	def index 
-		if (session[:current_user] == true)
-			puts("logged in already")
-			@current_user = User.find(session['current_user']['id'])
-			redirect_to "/recs"
-		else 
-			binding.pry
-			render :index
+		# if (session[:current_user] == true)
+		# 	puts("logged in already")
+		# 	@current_user = User.find(session['current_user']['id'])
+		# 	redirect_to "/recs"
+		# else 
+		# 	# binding.pry
+		# 	render :index
 
-		end	
+		# end	
 	end
 
-	# def login
-	# 	user = User.find_by(email: params['email'])
-	# 		if user && user.authenticate(params['password'])
-	# 			@current_user = user 
-	# 			session[:current_user] = user
-	# 			redirect_to '/recs'
-	# 		else 
-	# 			@error = "Incorrect email or password. Please try again."
-	# 			render :index
-	# 		end
-	# 	end
-
-	# def logout 
-	# 	session[:current_user] == false
-	# 	@current_user = session[:current_user]
-	# 	puts ("logged out")
-	# 	redirect_to "/" 
-	# end
+	
 
 	def new 
 		@user = User.new	
@@ -40,7 +23,7 @@ class UsersController < ApplicationController
 
 
 	def create
-		binding.pry
+		# binding.pry
 		@top_5 = params[:top_5].split(",")
 
 		@user = User.create(
@@ -62,7 +45,10 @@ class UsersController < ApplicationController
 
 	def show 
 		@user = User.where(id: params['id'])
+		# binding.pry
+		@current_favs = CurrentFav.where(user_id: params['id'])
 		render :show
+		# binding.pry
 	end
 
 private

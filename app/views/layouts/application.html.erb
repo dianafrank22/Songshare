@@ -12,8 +12,8 @@
 		<!-- insert an image here -->
 	</a>
 
-		<% if current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+		<% if current_user %> 
+		Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
 <% else %>
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>
