@@ -12,12 +12,11 @@
 		<!-- insert an image here -->
 	</a>
 
-		<% if session['current_user'] != nil %>
-		<!-- get the user name from the current_user in the session -->
-		<form action="/logout" method="POST" class="logoutForm">
-			<input  type="submit" value="Log Out">
-		</form>
-	<% end %>
+		<% if current_user %>
+  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+<% else %>
+  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+<% end %>
 	</div>
 	
 

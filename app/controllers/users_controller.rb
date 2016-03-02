@@ -14,24 +14,24 @@ class UsersController < ApplicationController
 		end	
 	end
 
-	def login
-		user = User.find_by(email: params['email'])
-			if user && user.authenticate(params['password'])
-				@current_user = user 
-				session[:current_user] = user
-				redirect_to '/recs'
-			else 
-				@error = "Incorrect email or password. Please try again."
-				render :index
-			end
-		end
+	# def login
+	# 	user = User.find_by(email: params['email'])
+	# 		if user && user.authenticate(params['password'])
+	# 			@current_user = user 
+	# 			session[:current_user] = user
+	# 			redirect_to '/recs'
+	# 		else 
+	# 			@error = "Incorrect email or password. Please try again."
+	# 			render :index
+	# 		end
+	# 	end
 
-	def logout 
-		session[:current_user] == false
-		@current_user = session[:current_user]
-		puts ("logged out")
-		redirect_to "/" 
-	end
+	# def logout 
+	# 	session[:current_user] == false
+	# 	@current_user = session[:current_user]
+	# 	puts ("logged out")
+	# 	redirect_to "/" 
+	# end
 
 	def new 
 		@user = User.new	
@@ -50,15 +50,12 @@ class UsersController < ApplicationController
 			:password => params[:password],
 			:top_5 => @top_5
 		  )
-		binding.pry
-	
-		# respond_to do |format|
-  #   	format.html
-  #   	format.json  { render :json => @user}
-  #   	binding.pry
-    		# @user.save
-  		# end
-  		# redirect_to '/recs'
+		if @user.save
+			session[:user_id] = user.id
+			redirect_to '/recs'
+		else
+			render :new
+		end
 	end
 
 

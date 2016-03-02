@@ -1,6 +1,5 @@
 class TagsController < ApplicationController
-
-
+before_filter :authorize
 # need a search query for username, tags, song_name, artist 
 	def new
 		@tag = Tag.new

@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   resources :users
   resources :recs
   resources :tags
+  resources :sessions
 
   get '/', to: 'users#home'
-  get '/login', to: 'users#index'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#show'
-  post 'login', to: 'users#login'
-  post 'logout', to: 'users#logout'
-
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
 
 end

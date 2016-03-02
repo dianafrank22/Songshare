@@ -1,5 +1,7 @@
 require 'pry'
 class RecsController < ApplicationController
+# forces user to log in before seeing this
+before_filter :authorize
 
 	def index
 		# @TODO show recs of only users you follow using join table
