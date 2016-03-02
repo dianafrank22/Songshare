@@ -45,10 +45,20 @@ class UsersController < ApplicationController
 
 	def show 
 		@user = User.where(id: params['id'])
+		@id = params['id'].to_i
 		# binding.pry
 		@current_favs = CurrentFav.where(user_id: params['id'])
 		render :show
 		# binding.pry
+	end
+
+
+	def follow
+		follow = Follower.create(user_id: @current_user, following_id: params[:id])
+	end
+
+	def unfollow
+		follow = Follower.find_by(following_id: params[:id], user_id: @current_user)
 	end
 
 private

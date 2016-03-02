@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :tags
   resources :sessions
   resources :current_favs
+  resources :followers
 
   get '/', to: 'users#home'
   get '/signup', to: 'users#new'

@@ -13,28 +13,25 @@
   </head>
 <body>
 
+<button> <a href = '/recs/new'> Add New Rec </a></button>
 
 
-	<a href = '/recs/new'> Add New Rec </a>
-
+	
+<div class = "rec">
 	<% @recs.each do |r| %>
-		<div class = "rec">
+			<% @user.each do |user| %>
+				<p> <%= user.username %> Recommends: </p>
+			<%end%>
 			
-		<%# @user.each do |user| %>
-			<p> <%#= user.username %> Recommends: </p>
-		<%#end%>
-			<!-- find username for each user where id = user_id -->
-		<%binding.pry%>
+			
 		<h3> <%= r[0].title %> </h3>
 		<h3> <%= r[0].artist %> </h3>
 		<iframe src="https://embed.spotify.com/?uri=<%=r[0].uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+			<%@tag.each do |tag| %>
+				<li><%= tag.tag %></li>
 			<%end%>
-		
-		<%# @tag.each do |tag| %>
-			<li><%#= tag.tag %></li>
-		<%#end%>
-
-		</div>
+	<%end%>
+</div>
 
 
 

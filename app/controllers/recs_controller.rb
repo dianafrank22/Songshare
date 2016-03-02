@@ -11,11 +11,11 @@ before_filter :authorize
 			@recs.push(Rec.where(:user_id => person.following_id))
 		end
 		# why does this not work?
-		# id = Rec.select('id')
-  # #  		rec_tag_ids = RecTag.select('tag_id').where( :rec_id => id)
-  # #   	@tag = Tag.where(:id => rec_tag_ids)
-  #   	user_id = Rec.select('user_id').where(:id => id)
-  #   	@user = User.where(:id => user_id)
+		id = Rec.select('id')
+   		rec_tag_ids = RecTag.select('tag_id').where( :rec_id => id)
+    	@tag = Tag.where(:id => rec_tag_ids)
+    	user_id = Rec.select('user_id').where(:id => id)
+    	@user = User.where(:id => user_id)
     	binding.pry
 	end
 
