@@ -17,8 +17,11 @@
 	<h3> <%= fav.title %> </h3>
 		<h3> <%= fav.artist %> </h3>
 		<iframe src="https://embed.spotify.com/?uri=<%=fav.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
-	<a href = '/current_favs/<%=fav.id%>'> Delete </a>
+	<%= link_to 'Delete', {action: :destroy, id: fav.id}, method: :delete %>
 	<%end%>
+
+
+
 
 
 </div>
@@ -27,8 +30,8 @@
 
 
 <form id="search-form">
-	<input type = "text" id="query" value= "" class = "search-input"/>
-	<input type = "submit" id="search" class="favs_button" value="Search" />
+	<input type="text" id="query" value= "" class="search-input"/>
+	<input type="submit" id="search" class="favs_button" value="Search" />
 </form>
 
 <div id="results"> </div>

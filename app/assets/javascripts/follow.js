@@ -16,6 +16,7 @@ $('#follow_btn').click(function(){
 			},
 			// contentType: "application/json; charset=utf-8",
    			success: function (data) {
+   				$('#follow_btn').val('Unfollow')
 			
 			}
 		})

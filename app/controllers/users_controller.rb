@@ -2,20 +2,7 @@ require 'pry'
 class UsersController < ApplicationController
 	before_action :set_user
 
-	def index 
-		# if (session[:current_user] == true)
-		# 	puts("logged in already")
-		# 	@current_user = User.find(session['current_user']['id'])
-		# 	redirect_to "/recs"
-		# else 
-		# 	# binding.pry
-		# 	render :index
-
-		# end	
-	end
-
 	
-
 	def new 
 		@user = User.new	
 	end
@@ -46,6 +33,10 @@ class UsersController < ApplicationController
 	def show 
 		@user = User.where(id: params['id'])
 		@id = params['id'].to_i
+		@top_5 = User.select('top_5').where(id: params['id'])
+		@top = @top_5[0].top_5
+		@new = @top.split(',')
+		# binding.pry
 		# binding.pry
 		@current_favs = CurrentFav.where(user_id: params['id'])
 		render :show
@@ -53,13 +44,13 @@ class UsersController < ApplicationController
 	end
 
 
-	def follow
-		follow = Follower.create(user_id: @current_user, following_id: params[:id])
-	end
+	# def follow
+	# 	follow = Follower.create(user_id: @current_user, following_id: params[:id])
+	# end
 
-	def unfollow
-		follow = Follower.find_by(following_id: params[:id], user_id: @current_user)
-	end
+	# def unfollow
+	# 	follow = Follower.find_by(following_id: params[:id], user_id: @current_user)
+	# end
 
 private
 # # Use callbacks to share common setup or constraints between actions.

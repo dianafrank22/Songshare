@@ -6,9 +6,9 @@ before_filter :authorize
 	end
 
 	def create
-		binding.pry
+		# binding.pry
 		@follow = Follower.create(user_id: @current_user.id, following_id: params[:id])
-		binding.pry	
+		# binding.pry	
 		respond_to do |format|
     	format.html
     	format.json  { render :json => @follow}

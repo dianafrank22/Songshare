@@ -23,10 +23,19 @@ if own users page, has the edit option show up
 </div>
 
 
+<h3> <%= user.username %>'s All Time Favorite Artists Are </h3>
+<div class = 'top5'>
+<% @new.each do |top| %>
 
-<%= user.top_5%>
+<li><%= top.gsub(/[^a-zA-Z0-9\-]/,"")%></li>
 
-<% end %>
+<%end%>
+
+</div>
+
+
+
+<h2> <%= user.username %> Is Currently Listening To: </h2>
 
 <% @current_favs.each do |fav| %>
 	<h3> <%= fav.title %> </h3>
@@ -35,7 +44,7 @@ if own users page, has the edit option show up
 		<%end%>
 
 
-
+<% end %>
 
 
 </body>

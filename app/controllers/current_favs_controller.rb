@@ -15,11 +15,16 @@ class CurrentFavsController < ApplicationController
 		@current_fav = CurrentFav.create(:title => params[:title], :preview_url => params[:preview_url],
 			:song_id => params[:song_id], :uri => params[:uri], :image => params[:image],
 			:artist => params[:artist], :spotify_url => params[:spotify_url], :user_id => @current_user.id)
+    	redirect_to '/current_favs/new'
     end
 
-    def delete
-    	CurrentFav.find(params[:id]).destroy
-    	redirect_to :back
+    def destroy
+    	@current_fav = CurrentFav.find(params[:id])
+    	@current_fav.destroy
+
+    	redirect_to '/current_favs/new'
+
+    
     end
 
     def show 

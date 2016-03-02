@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   	if user && user.authenticate(params[:password])
   		session[:user_id] = user.id
       @current_user = session[:user_id]
-      binding.pry
+      # binding.pry
   		redirect_to '/recs'
   	else
   		redirect_to '/login'
