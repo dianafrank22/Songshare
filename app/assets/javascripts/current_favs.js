@@ -50,6 +50,7 @@
 			// contentType: "application/json; charset=utf-8",
    			success: function (data) {
 				console.log(data.song)
+				window.location.href= "/current_favs/new"
 			}
 		})
 	});

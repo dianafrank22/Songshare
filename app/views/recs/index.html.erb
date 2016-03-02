@@ -19,15 +19,13 @@
 	
 <div class = "rec">
 	<% @recs.each do |r| %>
-			<% @user.each do |user| %>
-				<p> <%= user.username %> Recommends: </p>
-			<%end%>
+				<p> <%= r.user.username %> Recommends: </p>
 			
 			
-		<h3> <%= r[0].title %> </h3>
-		<h3> <%= r[0].artist %> </h3>
-		<iframe src="https://embed.spotify.com/?uri=<%=r[0].uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
-			<%@tag.each do |tag| %>
+		<h3> <%= r.title %> </h3>
+		<h3> <%= r.artist %> </h3>
+		<iframe src="https://embed.spotify.com/?uri=<%=r.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+			<%r.tags.each do |tag| %>
 				<li><%= tag.tag %></li>
 			<%end%>
 	<%end%>

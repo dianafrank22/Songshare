@@ -21,10 +21,7 @@ class CurrentFavsController < ApplicationController
     def destroy
     	@current_fav = CurrentFav.find(params[:id])
     	@current_fav.destroy
-
     	redirect_to '/current_favs/new'
-
-    
     end
 
     def show 

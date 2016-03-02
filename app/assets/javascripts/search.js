@@ -49,7 +49,8 @@
 			},
 			// contentType: "application/json; charset=utf-8",
    			success: function (data) {
-				console.log(data.song)
+				// console.log(data)
+				window.location.href= "/recs/"+ data.id
 			}
 		})
 	});
