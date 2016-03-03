@@ -17,6 +17,8 @@
 <button class="new_rec_btn" id="new-rec"> <a href = '/recs/new'> Add New Rec </a></button>
 
 <div class = "recommendations"> 
+
+<h1> Recent Recs </h1>
   
         <div class = "rec">
            <% @recs.each do |r| %>
@@ -29,18 +31,22 @@
     <div class = "row"> 
         <div class="col-md-6">
           <div class = "song-info">
-              <h3> <%= r.title %> </h3>
-              <h3> <%= r.artist %> </h3>
+              <h4> <%= r.title %> </h4>
+              <h4> <%= r.artist %> </h4> 
               <iframe src="https://embed.spotify.com/?uri=<%=r.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
           </div>
         </div>
             
         <div class="col-md-6">
+        <br/>
+        <h4>They say it's:</h4>
           <div class = "tags">
+          <h5>
             <%r.tags.each do |tag| %>
               <%= tag.tag %>
               <%end%>
           </div>
+          </h5>
         </div>
     </div>
          <%end%>  

@@ -18,9 +18,14 @@
             <div class="inner">
              <div class="inner cover">
             <h1 class="cover-heading">Share Music With Friends Easily</h1>
-            <p class="lead">Song Share is an app where you can blah blah blah</p>
+            <p class="lead">Song Share is an app where you can find music </p><p class="lead">based off of the recommendations of your friends.</p><p class="lead"> Connect with others through music.</p>
+
+            <% if current_user %>
+
+            <%else%>
           
             <button class="signup-btn"> <a href = "/signup"> Sign Up! </a> </button>
+            <%end%>
           </div>
              
             </div>

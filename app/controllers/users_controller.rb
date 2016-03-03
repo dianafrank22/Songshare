@@ -2,6 +2,17 @@ require 'pry'
 class UsersController < ApplicationController
 	before_action :set_user
 
+
+
+def index
+  if params[:search]
+    @searchUser = User.search(params[:search])
+  else
+    @searchUser = User.all
+  end
+end
+
+
 	
 	def new 
 		@user = User.new	

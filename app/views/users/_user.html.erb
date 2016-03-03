@@ -10,7 +10,11 @@
 
 
 
-
+<% if @searchUser.present? %>
+  <%= render @searchUser %>
+<% else %>
+  <p>There are no users containing the term(s) <%= params[:search] %>.</p>
+<% end %>
 
 
 	
