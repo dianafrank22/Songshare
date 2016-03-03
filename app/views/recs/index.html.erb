@@ -14,31 +14,40 @@
 <body>
   
 
- <button> <a href = '/recs/new'> Add New Rec </a></button>
+<button class="new_rec_btn" id="new-rec"> <a href = '/recs/new'> Add New Rec </a></button>
 
-  <div class = "recommendations"> 
+<div class = "recommendations"> 
   
-    <div class = "rec">
-       <% @recs.each do |r| %>
-       <div class = "rec-user">
-          <h3> <%= r.user.username %>
-           Recommends: </h3>
+        <div class = "rec">
+           <% @recs.each do |r| %>
+            <div class = "rec-user">
+              <h3> <%= r.user.username %>
+               Recommends: </h3>
+            </div>
+
+
+    <div class = "row"> 
+        <div class="col-md-6">
+          <div class = "song-info">
+              <h3> <%= r.title %> </h3>
+              <h3> <%= r.artist %> </h3>
+              <iframe src="https://embed.spotify.com/?uri=<%=r.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
           </div>
-      
-      <div class = "song-info">
-        <h3> <%= r.title %> </h3>
-        <h3> <%= r.artist %> </h3>
-        <iframe src="https://embed.spotify.com/?uri=<%=r.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
-      </div>
-      <div class = "tags">
-          <%r.tags.each do |tag| %>
-          <%= tag.tag %>
-          <%end%>
-      </div>
-  <%end%>
+        </div>
+            
+        <div class="col-md-6">
+          <div class = "tags">
+            <%r.tags.each do |tag| %>
+              <%= tag.tag %>
+              <%end%>
+          </div>
+        </div>
     </div>
-       
-  </div>
+         <%end%>  
+       </div>
+</div>
+
+
  
 
 

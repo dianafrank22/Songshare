@@ -6,7 +6,7 @@ before_filter :authorize
 	def index
 		following_ids = current_user.followers.pluck(:following_id)
 		@recs = following_ids.map do |following_id|
-			Rec.includes(:user, :rec_tags).find_by(:user_id => following_id)
+			Rec.includes(:user, :tags).find_by(:user_id => following_id)
 		end
 		#@TODO why does this not work vvvv showing all of the users/tags not each one?
 		# id = Rec.select('id')

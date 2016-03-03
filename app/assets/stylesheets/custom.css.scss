@@ -102,7 +102,7 @@ a:hover {
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
+  color: black;
   text-shadow: none; /* Prevent inheritence from `body` */
   background-color: #fff;
   border: 1px solid #fff;
@@ -223,21 +223,39 @@ body {
   }
 }
 
+// everything about is from bootstrap
+
 
 // recs index css
-.rec {
-  display: inline;
-  background: 333333;
+.new_rec_btn {
+  margin-bottom: 40px;
+  background: #838383;
+  color: black;
+  margin-top: 30px;
+  border-radius: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 1.2em;
+
 }
+
 .recommendations {
-  border: white solid;
   background: #909090;
   margin-bottom: 90px;
+  display: inline-block;
+}
+
+.rec {
+  background: 333333;
+  border: white solid;
+  margin: 30px;
 }
 
 .rec-user {
   text-align: left;
   color: black;
+  border-top: white solid;
+  margin-left: 10px; 
 }
 
 
@@ -253,6 +271,7 @@ body {
 
 
 
+
 // CSS for changing input forms
 input#tag{
   width: 400px;
@@ -264,6 +283,7 @@ input#tag{
   width: 400px;
   height: 200px;
   color: black;
+  margin: 25px auto;
 }
 
 input#username{
@@ -279,3 +299,85 @@ input#image{
 input#password{
   color:black;
 }
+
+
+// for grid css
+.row {
+  margin-bottom: 20px;
+}
+.row .row {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+
+// user page CSS
+.user_image {
+  text-align: right;
+  height: 400px;
+  width: 400px;
+  border: white double;
+}
+
+#follow_btn{
+  background: white;
+  color: black;
+  margin-top: 30px;
+  border-radius: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 1.2em;
+}
+
+.users_alltime{
+  border: white solid;
+  background: #abaaaa;
+  color: #333333;
+  margin-top: 90px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+h1.username {
+  text-decoration: underline;
+}
+
+// adding rec CSS
+
+.search-input{
+  color: black;
+}
+
+.show-rec {
+  margin-top: 30px;
+}
+
+.suggestions{
+  margin-top: 130px;
+}
+
+.suggest{
+  font-style: italic;
+}
+
+// edit user form
+
+input#user_email, input#user_username, input#user_image, input#user_password{
+  color: black;
+}
+
+textarea#user_top_5{
+  color: black;
+   width: 400px;
+  height: 200px;
+  margin: 25px auto;
+}
+

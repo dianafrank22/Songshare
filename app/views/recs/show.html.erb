@@ -7,19 +7,32 @@
   <link rel="stylesheet" href="">
 </head>
 <body>
-  
-   <% @rec.each do |r| %>
-    <div class = "rec">
 
-    <h3> <%= r.title %> </h3>
-    <h3> <%= r.artist %> </h3>
-    <iframe src="https://embed.spotify.com/?uri=<%=r.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
-    <%end %> </div> </br>
+<div class="row">
+
+  <div class="col-md-6 suggestions">
+    <label> <h3 class ="tags-title">Let Your Followers Know Some Details...</h3> </label><br>
+      <h4> Need some suggestions? </h4>
+      <h5 class="suggest"> When Do You Listen To This?</h5>
+      <h5 class="suggest">What Music Is It Like?</h5>
+      <h5 class="suggest">What Mood Does It Put You In?</h5>
+      <h5 class="suggest">Who Would Like This?</h5>
+  </div>
 
 
+  <div class="col-md-6">
+    <% @rec.each do |r| %>
+      <div class = "show-rec">
+        <h3> <%= r.title %>    by
+        <%= r.artist %> </h3>
+        <iframe src="https://embed.spotify.com/?uri=<%=r.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+    <%end %> 
+      </div> </br>
+    <%= render :partial => "tags/form"%>
+  </div>
 
 
-<%= render :partial => "tags/form"%>
+</div>
 
   
 </body>
