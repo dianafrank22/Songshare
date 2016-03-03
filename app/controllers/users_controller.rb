@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
 
 	def create
-		# binding.pry
+		binding.pry
 		@top_5 = params[:top_5].split(",")
 
 		@user = User.create(
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 			:password => params[:password],
 			:top_5 => @top_5
 		  )
+		binding.pry
 		if @user.save
 			session[:user_id] = user.id
 			redirect_to '/recs'
