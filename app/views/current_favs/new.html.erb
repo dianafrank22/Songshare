@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Current Favorites</title>
-	<link rel="stylesheet" href="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Current Favorites</title>
+  <link rel="stylesheet" href="">
 </head>
 <body>
 
@@ -14,11 +14,11 @@
 
 <div class = 'current_favs'>
 <% @users_favs.each do |fav| %>
-	<h3> <%= fav.title %> </h3>
-		<h3> <%= fav.artist %> </h3>
-		<iframe src="https://embed.spotify.com/?uri=<%=fav.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
-	<%= link_to 'Delete', {action: :destroy, id: fav.id}, method: :delete %>
-	<%end%>
+  <h3> <%= fav.title %> </h3>
+    <h3> <%= fav.artist %> </h3>
+    <iframe src="https://embed.spotify.com/?uri=<%=fav.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+  <%= link_to 'Delete', {action: :destroy, id: fav.id}, method: :delete %>
+  <%end%>
 
 
 
@@ -30,14 +30,14 @@
 
 
 <form id="search-form">
-	<input type="text" id="query" value= "" class="search-input"/>
-	<input type="submit" id="search" class="favs_button" value="Search" />
+  <input type="text" id="query" value= "" class="search-input"/>
+  <input type="submit" id="search" class="favs_button" value="Search" />
 </form>
 
 <div id="results"> </div>
 
 <script src="/assets/current_favs.js" type="text/javascript"></script>
 
-	
+  
 </body>
 </html>

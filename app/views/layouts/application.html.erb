@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SongShare</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div class = 'header clearfix'>
-	<a href = "/" class ="logo">
-		<!-- insert an image here -->
-	</a>
+  <head>
+    <title>Song Share</title>
+    <%= stylesheet_link_tag 'application', media: 'all',
+                                           'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+   <%= render 'layouts/shim'%>
+  </head>
+  <body>
+  <%= render 'layouts/header' %>
+   
+    <div class="container">
+      <%= yield %>
 
-		<% if current_user %> 
-		Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
-<% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-<% end %>
-	</div>
-	
+      
+    </div>
 
-
-
-<%= yield %>
-
-<footer class = "footer">
-<p>&copy;Diana Frank Dev 2016.</p>
-</footer>
-
-</body>
+  </body>
+  <%= render 'layouts/footer' %>
 </html>
+
 
 

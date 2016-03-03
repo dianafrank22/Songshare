@@ -7,13 +7,7 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-
-user profile page,
-if own users page, has the edit option show up
-
-<!-- write if else statement, if user already follows, show unfollow button -->
-
-<%= render :partial => "followers/form"%>
+    <%= render :partial => "followers/form"%>
 
 <% @user.each do |user| %>
 <h1> <%= user.username %></h1>
@@ -27,7 +21,7 @@ if own users page, has the edit option show up
 <div class = 'top5'>
 <% @new.each do |top| %>
 
-<li><%= top.gsub(/[^a-zA-Z0-9\-]/,"")%></li>
+<li><%= top.gsub(/[^a-zA-Z0-9\s\-]/,"")%></li>
 
 <%end%>
 
@@ -38,19 +32,27 @@ if own users page, has the edit option show up
 <h2> <%= user.username %> Is Currently Listening To: </h2>
 
 <% @current_favs.each do |fav| %>
-	<h3> <%= fav.title %> </h3>
-		<h3> <%= fav.artist %> </h3>
-		<iframe src="https://embed.spotify.com/?uri=<%=fav.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
-		<%end%>
+  <h3> <%= fav.title %> </h3>
+    <h3> <%= fav.artist %> </h3>
+    <iframe src="https://embed.spotify.com/?uri=<%=fav.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+    <%end%>
 
 
 <% end %>
 
-
-</body>
+  </body>
 </html>
 
+
 <script src="/assets/follow.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
 
 
 

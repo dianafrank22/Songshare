@@ -1,8 +1,97 @@
-/*
- * Globals
- */
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
-/* Links */
+
+body {
+  padding-top: 60px;  
+  
+}
+
+
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+
+footer small {
+  float: left;
+}
+
+
+
+
+
+// Home PAGE
 a,
 a:focus,
 a:hover {
@@ -62,7 +151,6 @@ body {
 /* Padding for spacing */
 .inner {
   padding: 30px;
-  background: url(/images/concert.gif);
 }
 
 
@@ -84,6 +172,14 @@ body {
 
 .cover {
   padding: 0 20px;
+ background: url(https://media.giphy.com/media/l41lYZQNZHjrpAkP6/giphy.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 600px;
+  width: 2000px;
+  margin-left: -600px;
 }
 .cover .btn-lg {
   padding: 10px 20px;
@@ -125,4 +221,61 @@ body {
   .cover-container {
     width: 700px;
   }
+}
+
+
+// recs index css
+.rec {
+  display: inline;
+  background: 333333;
+}
+.recommendations {
+  border: white solid;
+  background: #909090;
+  margin-bottom: 90px;
+}
+
+.rec-user {
+  text-align: left;
+  color: black;
+}
+
+
+.song-info {
+  text-align: left;
+  margin-left: 40px;
+}
+
+.tags {
+  text-align: right;
+  margin-right: 40px;
+}
+
+
+
+// CSS for changing input forms
+input#tag{
+  width: 400px;
+  height: 200px;
+  color: black;
+}
+
+#top_5 {
+  width: 400px;
+  height: 200px;
+  color: black;
+}
+
+input#username{
+  color:black;
+}
+
+input#email{
+  color:black;
+}
+input#image{
+  color:black;
+}
+input#password{
+  color:black;
 }

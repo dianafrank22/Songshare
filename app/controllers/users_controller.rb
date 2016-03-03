@@ -36,21 +36,28 @@ class UsersController < ApplicationController
 		@top_5 = User.select('top_5').where(id: params['id'])
 		@top = @top_5[0].top_5
 		@new = @top.split(',')
-		# binding.pry
-		# binding.pry
 		@current_favs = CurrentFav.where(user_id: params['id'])
 		render :show
-		# binding.pry
 	end
 
 
-	# def follow
-	# 	follow = Follower.create(user_id: @current_user, following_id: params[:id])
-	# end
+	def edit
+	@user = User.find(params[:id])
+	end 
 
-	# def unfollow
-	# 	follow = Follower.find_by(following_id: params[:id], user_id: @current_user)
-	# end
+
+
+	def update 
+	@user = Cheese.find(params[:id])
+	@user.update(user_params)
+	if @user.save
+		render :show
+	else
+		render :edit
+	end
+	
+	end
+
 
 private
 # # Use callbacks to share common setup or constraints between actions.
