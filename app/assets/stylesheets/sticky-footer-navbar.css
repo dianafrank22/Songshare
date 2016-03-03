@@ -35,7 +35,7 @@ html, body {
     margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
 }
 .footer, .push {
-    height: 155px; /* .push must be the same height as .footer */
+    height: 35px; /* .push must be the same height as .footer */
 }
 
 
