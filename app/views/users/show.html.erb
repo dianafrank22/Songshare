@@ -8,21 +8,48 @@
 </head>
 <body>
 
-user profile page,
-if own users page, has the edit option show up
 
 
-<% @user.each do |user| %>
-<h1> <%= user.username %></h1>
+<div class="row">
 
-<div class = "user_image">
-<img src = "<%= user.image %> "/>
-</div>
+   <div class="col-md-6">
+     <% @user.each do |user| %>
+     <h1 class="username"> <%= user.username %></h1>
+     <img class="user_image" src = "<%= user.image %> "/>
+        <%= render :partial => "followers/form"%>
+   </div>
 
-<%= user.top_5%>
 
-<% end %>
+  
+  <div class="col-md-6">
+    <div class = "users_alltime">
+      <h3> <%= user.username %>'s All Time Favorite Artists Are </h3>
+        
+        <div class = 'top5'>
+          <% @new.each do |top| %>
+          <li><%= top.gsub(/[^a-zA-Z0-9\s\-]/,"")%></li>
+          <%end%>
+        </div>     
+    </div>
+  </div>
 
+
+
+    <h3 class="current_title"> <%= user.username %> Is Currently Listening To: </h3>
+        <div class="col-md-3">
+        <% @current_favs.each do |fav| %>
+        
+          <div class="favorites">
+            
+            <h3> <%= fav.title %> <%= fav.artist %> </h3>
+            <iframe src="https://embed.spotify.com/?uri=<%=fav.uri%>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>   
+          </div> 
+          <%end%> 
+        </div>
+       <%end%>
+       </div>
+    
+  
 
 
 
@@ -31,4 +58,4 @@ if own users page, has the edit option show up
 </html>
 
 
-
+<script src="/assets/follow.js" type="text/javascript"></script>

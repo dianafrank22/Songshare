@@ -1,0 +1,383 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+body {
+  padding-top: 60px;  
+  
+}
+
+
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+
+footer small {
+  float: left;
+}
+
+
+
+
+
+// Home PAGE
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: black;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+}
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+  background: url(https://media.giphy.com/media/l41lYZQNZHjrpAkP6/giphy.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+
+
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+ background: url(https://media.giphy.com/media/l41lYZQNZHjrpAkP6/giphy.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 600px;
+  width: 2000px;
+  margin-left: -600px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}
+
+// everything about is from bootstrap
+
+
+// recs index css
+.new_rec_btn {
+  margin-bottom: 40px;
+  background: #838383;
+  color: black;
+  margin-top: 30px;
+  border-radius: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 1.2em;
+
+}
+
+.recommendations {
+  background: #909090;
+  margin-bottom: 90px;
+  display: inline-block;
+}
+
+.rec {
+  background: 333333;
+  border: white solid;
+  margin: 30px;
+}
+
+.rec-user {
+  text-align: left;
+  color: black;
+  border-top: white solid;
+  margin-left: 10px; 
+}
+
+
+.song-info {
+  text-align: left;
+  margin-left: 40px;
+}
+
+.tags {
+  text-align: right;
+  margin-right: 40px;
+}
+
+
+
+
+// CSS for changing input forms
+input#tag{
+  width: 400px;
+  height: 200px;
+  color: black;
+}
+
+#top_5 {
+  width: 400px;
+  height: 200px;
+  color: black;
+  margin: 25px auto;
+}
+
+input#username{
+  color:black;
+}
+
+input#email{
+  color:black;
+}
+input#image{
+  color:black;
+}
+input#password{
+  color:black;
+}
+
+
+// for grid css
+.row {
+  margin-bottom: 20px;
+}
+.row .row {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+
+// user page CSS
+.user_image {
+  text-align: right;
+  height: 400px;
+  width: 400px;
+  border: white double;
+}
+
+#follow_btn{
+  background: white;
+  color: black;
+  margin-top: 30px;
+  border-radius: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 1.2em;
+}
+
+.users_alltime{
+  border: white solid;
+  background: #abaaaa;
+  color: #333333;
+  margin-top: 90px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+h1.username {
+  text-decoration: underline;
+}
+
+// adding rec CSS
+
+.search-input{
+  color: black;
+}
+
+.show-rec {
+  margin-top: 30px;
+}
+
+.suggestions{
+  margin-top: 130px;
+}
+
+.suggest{
+  font-style: italic;
+}
+
+// edit user form
+
+input#user_email, input#user_username, input#user_image, input#user_password{
+  color: black;
+}
+
+textarea#user_top_5{
+  color: black;
+   width: 400px;
+  height: 200px;
+  margin: 25px auto;
+}
+

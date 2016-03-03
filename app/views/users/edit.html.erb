@@ -1,1 +1,60 @@
-where a user can edit their own profile page
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+
+<!-- <form class="editForm" id= "edit-form">
+  <label>EMAIL</label>
+  <input type='text' name='email' id='email'> <br>
+  <label>USERNAME</label>
+  <input type='text' name='username' id='username'> <br>
+  <label> Image URL </label>
+  <input type='text' name='image' id='image'> <br>
+  <label>PASSWORD</label>
+  <input type='password' name='password' id='password'><br><br>
+  <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token()%>' size='65'>
+  
+  <br/>
+  <label> Top 5 All Time Favorite Artists </label><br>
+  <label> Please Seperate With Commas </label>
+  <input id='top_5' type="textbox" name='user[top_5][]' value="">
+
+
+  <button id="edit-submit" > Edit </button>
+</form> -->
+
+
+<%= form_for @user do |form| %>
+
+
+<%= form.label :email %> <br />
+<%= form.text_field :email %><br/>
+
+<%= form.label :username %> <br />
+<%= form.text_field :username %><br/>
+
+
+<%= form.label :image %> <br />
+<%= form.text_field :image %><br/>
+
+<%= form.label :password %> <br/>
+<%= form.text_field :password %><br/>
+
+
+<%= form.label :top_5%> <br/>
+<%= form.text_area :top_5%><br/>
+
+
+
+<%= form.submit "Edit yo self!" %>
+
+<% end %>
+
+  
+</body>
+</html>

@@ -14,20 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap.min
+//= require bootstrap
 
-
-
-// var searchTracks = function (query) {
-//     $.ajax({
-//         url: 'https://api.spotify.com/v1/search',
-//         data: {
-//             q: query,
-//             type: 'track'
-//         },
-//         success: function (response) {
-           
-//         }
-//     });
-// }; 
-
-// ????
+$(document).ready( function() {
+$('.dropdown-toggle').dropdown();
+});
