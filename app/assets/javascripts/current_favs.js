@@ -38,6 +38,9 @@
 		$.ajax({
 			type: 'POST',
 			url: '/current_favs',
+			  headers: {
+    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+  },
 			data: {
 				title: song.title,
 				preview_url: song.preview_url,

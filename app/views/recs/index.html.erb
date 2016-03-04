@@ -21,11 +21,12 @@
 <h1> Recent Recs </h1>
   
         <div class = "rec">
-           <% @recs.each do |r| %>
-            <div class = "rec-user">
-              <h3> <%= r.user.username %>
-               Recommends: </h3>
-            </div>
+
+             <% @recs.each do |r| %>
+              <div class = "rec-user">
+                <h3> <%= r.user.username   %>
+                 Recommends: </h3>
+              </div>
 
 
     <div class = "row"> 
@@ -41,15 +42,16 @@
         <br/>
         <h4>They say it's:</h4>
           <div class = "tags">
-          <h5>
+          
             <%r.tags.each do |tag| %>
-              <%= tag.tag %>
+            <a href ='/tags/<%=tag.id%>'>
+              <%= tag.tag %></a>
               <%end%>
           </div>
-          </h5>
+          
         </div>
     </div>
-         <%end%>  
+         <%end%>   
        </div>
 </div>
 

@@ -21,6 +21,16 @@ before_filter :authorize
   		end
 	end
 
+	def show
+		# show all recommendations with that tag name
+		@tag = Tag.where(id: params['id'])
+		@tagname = @tag[0].tag
+		@tags = Tag.select(:rec_id).where(:tag => @tagname)
+		@recs = Rec.where(:id => @tags)
+
+
+	end
+
 
 	
 
